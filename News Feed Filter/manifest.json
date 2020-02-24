@@ -1,0 +1,28 @@
+{
+  "name": "News Feed Filter",
+  "version": "1.0",
+  "description" : "Automatically filters out upwanted posts (based on input keywords) from your facebook news feed.",
+  "manifest_version": 2,
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": ["https://*.facebook.com/*"],
+       "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "That's the tool tip",
+    "default_popup": "popup.html"
+   },
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab"
+  ]
+}
